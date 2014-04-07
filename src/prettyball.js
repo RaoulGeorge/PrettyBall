@@ -38,8 +38,16 @@ function scriptLoadHandler() {
 /******** Our main function ********/
 function main() { 
     jQuery(document).ready(function($) { 
-        // We can use jQuery 1.4.2 here
-        
+        // We can use jQuery here
+
+        /******* Load CSS *******/
+        var css_link = $("<link>", { 
+            rel: "stylesheet", 
+            type: "text/css", 
+            href: "style.css" 
+        });
+        css_link.appendTo('head');          
+
     });
 }
 
