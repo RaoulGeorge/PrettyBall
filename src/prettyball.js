@@ -38,12 +38,20 @@
 
   function drawPrettyBall(self) {
     addCanvas(self);
+    //get a reference to the canvas
+    var ctx = $('.canvas-ctr')[0].getContext("2d");
+
+    //draw a circle
+    ctx.beginPath();
+    ctx.arc(100,75,50,0,2*Math.PI); 
+    ctx.closePath();
+    ctx.fill();
   };
 
   function addCanvas(self){
-    console.log();
     var el = self.element;
-    el.append('canvas');
+    var canvasEl = '<canvas class="canvas-ctr" style="height: 300px; width: 300px">';
+    el.append(canvasEl);
   }
 
   window.PrettyBall = PrettyBall;
