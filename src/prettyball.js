@@ -46,7 +46,15 @@ function main() {
             type: "text/css", 
             href: "style.css" 
         });
-        css_link.appendTo('head');          
+        css_link.appendTo('head'); 
+
+        var PrettyBall = function(element, options) {
+          this.init(element, options);
+        };
+
+        PrettyBall.prototype.init = function(element, options) {
+          console.log('init');
+        };
 
     });
 }
