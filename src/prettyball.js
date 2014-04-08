@@ -10,7 +10,7 @@
   }
 
   defaultOptions = {
-    'test': 'test'
+    'container': '.prettyball-container'
   };
 
   PrettyBall.prototype.getOption = function(key) {
@@ -19,9 +19,32 @@
     }
   };
 
-  PrettyBall.prototype.init = function(element, options) {
-    console.log(this.getOption('test'));
+  PrettyBall.prototype.setOption = function (option) {
+
   };
+
+  PrettyBall.prototype.init = function() {
+    var element;
+
+    element = this.getOption('container');
+    cacheControls(this, element);
+    drawPrettyBall(this);
+  };
+
+  function cacheControls(self, element) {
+    self.element = $(element);
+
+  }
+
+  function drawPrettyBall(self) {
+    addCanvas(self);
+  };
+
+  function addCanvas(self){
+    console.log();
+    var el = self.element;
+    el.append('canvas');
+  }
 
   window.PrettyBall = PrettyBall;
 
