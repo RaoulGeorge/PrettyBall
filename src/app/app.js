@@ -3,10 +3,14 @@ define(function (require) {
     require('prettyball');
 
     function App() {
-    	console.log(new PrettyBall());
+    	
     };
 
     App.prototype.activate = function() {
+    	var prettyball = new PrettyBall();
+    	prettyball.options = {
+    		'test': 'test'
+    	};
     };
 
     return App;

@@ -1,13 +1,28 @@
 (function() {
+  var PrettyBall, defaultOptions;
 
-        var PrettyBall = function(element, options) {
-          this.init(element, options);
-        };
+  PrettyBall = function(element, options) {
+    this.init(element, options);
+  };
 
-        PrettyBall.prototype.init = function(element, options) {
-          console.log('init');
-        };
+  if (PrettyBall.options == null) {
+    PrettyBall.options = {};
+  }
 
-        window.PrettyBall = PrettyBall;
+  defaultOptions = {
+    'test': 'test'
+  };
 
-})(); // We call our anonymous function immediately
+  PrettyBall.prototype.getOption = function(key) {
+    if(!(key in PrettyBall.options)) {
+      return defaultOptions[key];
+    }
+  };
+
+  PrettyBall.prototype.init = function(element, options) {
+    console.log(this.getOption('test'));
+  };
+
+  window.PrettyBall = PrettyBall;
+
+})(); 
