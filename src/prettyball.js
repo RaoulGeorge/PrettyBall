@@ -1,4 +1,4 @@
-function() {
+(function() {
 
 // Localize jQuery variable
 var jQuery;
@@ -44,7 +44,7 @@ function main() {
         var css_link = $("<link>", { 
             rel: "stylesheet", 
             type: "text/css", 
-            href: "style.css" 
+            href: "src/style.css" 
         });
         css_link.appendTo('head'); 
 

@@ -1,4 +1,5 @@
 require(['config/global'], function () {
-    require([''], function () {
+    require(['app/app'], function (application) {
+    	new application().activate();
     });
 });
