@@ -1,9 +1,8 @@
 define(function (require) {
+    //var app = require('app/app'); // causes a cyclic error
 
-    require('prettyball');
-    var app1 = require('app/app2');
-
-    function App() {
+require(['app/app1'], function (app) {   //solves the cyclic error
+   function App() {
     	
     };
 
@@ -15,4 +14,5 @@ define(function (require) {
     };
 
     return App;
+    });
 });
