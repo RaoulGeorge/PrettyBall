@@ -1,7 +1,6 @@
 define(function (require) {
 
     require('prettyball');
-    var app1 = require('app/app2');
 
     function App() {
     	
